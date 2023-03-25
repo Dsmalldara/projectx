@@ -4,14 +4,15 @@ import styled from "styled-components";
     display: flex;
     flex-direction: column;
     background-color: black;
-    height: 80px;
-    width: 100%;
-    margin-top:-16rem;
+    height: ${(props)=>(props.extendNavbar ? "100vh" : "80px")};
+    width: 120%;
+    margin-top:0;
     margin-left: 0;
     @media (min-width:700px){
-        width:90rem;
+        width:80rem;
+        margin-top: -19rem;
     }
-`
+    `
 export const LeftHand = styled.div`
     display: flex;
     flex: 70%;
@@ -21,7 +22,7 @@ export const LeftHand = styled.div`
 export const RightHand = styled.div`
     display: flex;
     flex:30%;
-    padding-right: 50px;
+    padding-right: 85px;
     background-color: salmon;
     @media (max-width: 700px){
         background-color: #ba2727;
@@ -34,7 +35,12 @@ export const Innercontainer = styled.div`
     display: flex;
 `
 export const OutsideContainer = styled.div`
-    
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+   @media(min-width: 700px){
+    display: none;
+   }
 `
 export const NavbarLinkComp = styled.div`
     display: flex; 
@@ -51,6 +57,14 @@ export const LinkTags = styled(Link)`
     display: none;
    }
 `
+export const LinkTagsExtended = styled(Link)`
+    display: flex;
+    margin: 10px;
+    color: #e7e5e0;
+    font-size: x-large;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    `
 export const Logo = styled.img`
    margin :10px ;
    max-width: 180px;
